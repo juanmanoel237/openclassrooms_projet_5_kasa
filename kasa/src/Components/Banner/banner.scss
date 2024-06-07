@@ -45,4 +45,25 @@ $banner-radius: 25px;
     
 }
 
-@media (max)
+@media (max-width: 768px){
+    .banner{
+        &-home{
+            height: $banner-height-mobile;
+            margin-bottom: $margin-bottom-mobile;
+        }
+
+        &-home .banner-container{
+            height: $banner-height-mobile;
+        }
+
+        &-title{
+            justify-content: left;
+            margin-left: 15px;
+            font-size: $font-size-mobile;
+        }
+
+        &-about {
+            margin-bottom: $margin-bottom-mobile;
+        }
+    }
+}

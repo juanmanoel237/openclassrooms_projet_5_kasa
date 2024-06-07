@@ -1,0 +1,38 @@
+// Variables SCSS
+$background-color: black;
+$padding-top: 60px;
+$padding-bottom: 15px;
+$logo-width: 120px;
+$text-color: white;
+$font-weight: 500;
+$font-size-desktop: 24px;
+$font-size-mobile: 12px;
+
+.footer {
+  background-color: $background-color;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: $padding-top;
+  padding-bottom: $padding-bottom;
+
+  .logo {
+    width: $logo-width;
+  }
+
+  p {
+    color: $text-color;
+    align-items: flex-end;
+    font-weight: $font-weight;
+    font-size: $font-size-desktop;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    p {
+      font-size: $font-size-mobile;
+    }
+  }
+}
