@@ -1,0 +1,88 @@
+import React, { useState, useEffect } from "react";
+import "./style.scss";
+import nextArrow from "../../assets/Image/arrow/next.png";
+import previousArrow from "../../assets/Image/arrow/previous.png";
+
+function Carrousel({ pictures }) {
+    // État pour suivre l'image actuelle affichée dans le carrousel
+    const [currentPicture, setCurrentPicture] = useState(0);
+
+    // Fonction pour changer l'image affichée
+    function changePicture(direction) {
+        if (direction === "next") {
+            // Si la direction est "next", on passe à l'image suivante
+            // Si on est à la dernière image, on retourne à la première (grâce au modulo)
+            setCurrentPicture((prevPicture) => (prevPicture + 1) % pictures.length);
+        } else if (direction === "previous") {
+            // Si la direction est "previous", on passe à l'image précédente
+            // Si on est à la première image, on retourne à la dernière
+            setCurrentPicture((prevPicture) => 
+                prevPicture === 0 ? pictures.length - 1 : prevPicture - 1
+            );
+        }
+    }
+
+    // Ajouter une navigation au clavier pour améliorer l'accessibilité
+    useEffect(() => {
+        const handleKeyDown = (event) => {
+            // Si la touche droite est pressée, on passe à l'image suivante
+            if (event.key === "ArrowRight") {
+                changePicture("next");
+            // Si la touche gauche est pressée, on passe à l'image précédente
+            } else if (event.key === "ArrowLeft") {
+                changePicture("previous");
+            }
+        };
+
+        // Ajouter un écouteur d'événement pour les touches du clavier
+        window.addEventListener("keydown", handleKeyDown);
+
+        // Nettoyer l'écouteur d'événement lorsque le composant est démonté
+        return () => {
+            window.removeEventListener("keydown", handleKeyDown);
+        };
+    }, []); // Le tableau vide signifie que l'effet s'exécute une seule fois après le montage
+
+    return (
+        <div className="carousel">
+            {/* Afficher les flèches de navigation seulement si il y a plus d'une image */}
+            {pictures.length > 1 && (
+                <img
+                    className="previous-arrow arrow-img"
+                    src={previousArrow}
+                    alt="Précédente"
+                    onClick={() => changePicture("previous")}
+                    aria-label="Image précédente" // Améliore l'accessibilité pour les lecteurs d'écran
+                />
+            )}
+
+            {/* Afficher l'image actuelle */}
+            <img
+                className="picture"
+                src={pictures[currentPicture]}
+                alt={`Slide ${currentPicture + 1}`} // Décrit l'image actuelle
+                loading="lazy" // Améliore la performance en chargeant l'image seulement quand nécessaire
+            />
+
+            {/* Afficher les flèches de navigation seulement si il y a plus d'une image */}
+            {pictures.length > 1 && (
+                <img
+                    className="next-arrow arrow-img"
+                    src={nextArrow}
+                    alt="Suivante"
+                    onClick={() => changePicture("next")}
+                    aria-label="Image suivante" // Améliore l'accessibilité pour les lecteurs d'écran
+                />
+            )}
+
+            {/* Afficher le compteur seulement si il y a plus d'une image */}
+            {pictures.length > 1 && (
+                <p className="numbers">
+                    {currentPicture + 1} / {pictures.length} {/* Affiche la position actuelle et le nombre total d'images */}
+                </p>
+            )}
+        </div>
+    );
+}
+
+export default Carrousel;
