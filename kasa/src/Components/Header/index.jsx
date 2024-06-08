@@ -9,7 +9,7 @@ const Header = () => {
         <img src={logo} className='logo' alt="Logo Kasa" />
         <nav className="nav-header">
             <NavLink to="/" className={({isActive}) => isActive ? "active" : undefined}>Accueil</NavLink>
-            <NavLink to="/About" className={({isActive}) => isActive ? "active" : undefined}>A propos</NavLink>
+            <NavLink to="/About" className={({isActive}) => isActive ? "active" : undefined}>A Propos</NavLink>
         </nav>
     </header>
   )
