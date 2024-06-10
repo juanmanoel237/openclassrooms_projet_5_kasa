@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./style.scss";
+import "./carrousel.scss";
 import nextArrow from "../../assets/Image/arrow/next.png";
 import previousArrow from "../../assets/Image/arrow/previous.png";
 
@@ -41,10 +41,10 @@ function Carrousel({ pictures }) {
         return () => {
             window.removeEventListener("keydown", handleKeyDown);
         };
-    }, []); // Le tableau vide signifie que l'effet s'exécute une seule fois après le montage
+    }, ); // Le tableau vide signifie que l'effet s'exécute une seule fois après le montage
 
     return (
-        <div className="carousel">
+        <div className="carrousel">
             {/* Afficher les flèches de navigation seulement si il y a plus d'une image */}
             {pictures.length > 1 && (
                 <img
