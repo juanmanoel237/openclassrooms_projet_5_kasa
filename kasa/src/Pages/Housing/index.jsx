@@ -15,7 +15,7 @@ const Housing = () => {
 
     useEffect(() => {
         if (!data) {
-            navigate("/*"); // Assurez-vous que ce chemin est correct
+            navigate("/*");
         }
     }, [data, navigate]);
 

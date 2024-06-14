@@ -41,7 +41,7 @@ function Carrousel({ pictures }) {
         return () => {
             window.removeEventListener("keydown", handleKeyDown);
         };
-    }, ); // Le tableau vide signifie que l'effet s'exécute une seule fois après le montage
+    }, ); 
 
     return (
         <div className="carrousel">
@@ -52,7 +52,7 @@ function Carrousel({ pictures }) {
                     src={previousArrow}
                     alt="Précédente"
                     onClick={() => changePicture("previous")}
-                    aria-label="Image précédente" // Améliore l'accessibilité pour les lecteurs d'écran
+                    aria-label="Image précédente"
                 />
             )}
 
@@ -71,7 +71,7 @@ function Carrousel({ pictures }) {
                     src={nextArrow}
                     alt="Suivante"
                     onClick={() => changePicture("next")}
-                    aria-label="Image suivante" // Améliore l'accessibilité pour les lecteurs d'écran
+                    aria-label="Image suivante" 
                 />
             )}
 
