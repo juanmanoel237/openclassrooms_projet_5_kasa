@@ -30,25 +30,26 @@
 .collapse-description {
     background-color: #F7F7F7;
     color: black;
-    padding: 35px 25px 20px 20px;
-    margin: 0px;
+    padding: 0 15px;
+    margin: 0;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 16px;
     position: relative;
-    top: -30px;
     display: flex;
+    top: -30px;
     align-items: center;
     border-radius: 5px;
-
-    @media(max-width:768px){
-        font-size: 12px;
-        align-items: flex-start;
-        padding: 30px 5px 0px 5px;
+    overflow: hidden; // Cache tout contenu qui dépasse
+    transition: all 500ms ease-in-out; // Transition pour toutes les propriétés
+  
+    &.open {
+      padding: 75px 15px 70px 15px; // Affiche le padding complet lorsque la description est ouverte
     }
-}
-
-@media (max-width: 768px) {
-    .arrow-icon {
-       width: 16px;
+  
+    @media (max-width: 768px) {
+      font-size: 14px;
+      align-items: flex-start;
+      padding: 0 5px; // Ajustement du padding pour les petits écrans
     }
-}    
+  }
+  

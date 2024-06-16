@@ -136,12 +136,13 @@
     list-style-type: none;
     padding: 0;
     margin-top: 0;
+    font-size: 12px;
   }
   
   .equipements {
     list-style: none;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 16px;
     margin-bottom: 5px;
   
     @media (max-width: 768px) {

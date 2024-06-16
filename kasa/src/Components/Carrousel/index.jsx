@@ -22,7 +22,6 @@ function Carrousel({ pictures }) {
         }
     }
 
-    // Ajouter une navigation au clavier pour améliorer l'accessibilité
     useEffect(() => {
         const handleKeyDown = (event) => {
             // Si la touche droite est pressée, on passe à l'image suivante
@@ -37,7 +36,6 @@ function Carrousel({ pictures }) {
         // Ajouter un écouteur d'événement pour les touches du clavier
         window.addEventListener("keydown", handleKeyDown);
 
-        // Nettoyer l'écouteur d'événement lorsque le composant est démonté
         return () => {
             window.removeEventListener("keydown", handleKeyDown);
         };
