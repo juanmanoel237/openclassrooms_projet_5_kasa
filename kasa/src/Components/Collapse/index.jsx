@@ -22,7 +22,7 @@ const Collapse = ({ collapseTitle, collapseDescription }) => {
     } else {
       content.style.maxHeight = "0px";
     }
-  }, [isOpen]); // Le tableau de dépendances inclut isOpen, donc useEffect sera déclenché à chaque fois que isOpen change
+  }, [isOpen]); //useEffect sera déclenché à chaque fois que isOpen change
 
   return (
     <div className="collapse-container">
@@ -51,7 +51,7 @@ const Collapse = ({ collapseTitle, collapseDescription }) => {
 
 // Définition des prop types pour assurer que les bonnes propriétés sont passées au composant
 Collapse.propTypes = {
-  collapseTitle: PropTypes.string.isRequired, // Titre du collapse, doit être une chaîne de caractères et est requis
+  collapseTitle: PropTypes.string.isRequired,
   collapseDescription: PropTypes.node.isRequired, // Description du collapse, peut être n'importe quel noeud React
 };
 

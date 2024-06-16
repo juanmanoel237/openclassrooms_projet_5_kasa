@@ -21,6 +21,7 @@
 .arrow-icon {
     width: 24px;
     height: auto;
+    transition: transform 0.7s;
 }
 
 .arrow-up {
@@ -40,10 +41,10 @@
     align-items: center;
     border-radius: 5px;
     overflow: hidden; // Cache tout contenu qui dépasse
-    transition: all 500ms ease-in-out; // Transition pour toutes les propriétés
+    transition: all 300ms ease-in-out; // Transition pour toutes les propriétés
   
     &.open {
-      padding: 75px 15px 70px 15px; // Affiche le padding complet lorsque la description est ouverte
+      padding: 75px 15px 70px 15px;
     }
   
     @media (max-width: 768px) {
