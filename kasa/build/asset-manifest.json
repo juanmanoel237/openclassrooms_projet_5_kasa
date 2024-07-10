@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/static/css/main.f186dabf.css",
+    "main.js": "/static/js/main.8015efbb.js",
+    "static/media/montagne.webp": "/static/media/montagne.0e68964a5cc50b721081.webp",
+    "static/media/mer.webp": "/static/media/mer.55592931a67e5254912e.webp",
+    "index.html": "/index.html",
+    "main.f186dabf.css.map": "/static/css/main.f186dabf.css.map",
+    "main.8015efbb.js.map": "/static/js/main.8015efbb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f186dabf.css",
+    "static/js/main.8015efbb.js"
+  ]
+}
