@@ -1,56 +1,64 @@
-.collapse-title-container{
+.collapse-container {
+    width: 100%;
+    & + .collapse-container {  // Sélectionne chaque .collapse-container qui suit un autre .collapse-container
+      margin-top: 20px; // Espacement entre deux collapses consécutifs
+      
+      @media (max-width: 768px) {
+        margin-top: 15px; // Espacement légèrement réduit en mobile
+      }
+    }
+  }
+  
+  .collapse-title-container {
     background-color: #FF6060;
     border-radius: 7px;
-    margin-bottom: 30px;
-}
-
-.collapse-title{
+    cursor: pointer;
+  }
+  
+  .collapse-title {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     margin: 0 18px;
     height: 47px;
-    cursor: pointer;
-
-    @media(max-width:768px){
-        margin-left: 5px;
-    }
-}
-
-.arrow-icon {
-    width: 24px;
-    height: auto;
-    transition: transform 0.7s;
-}
-
-.arrow-up {
-    transform: rotate(180deg);
-}
-
-.collapse-description {
-    background-color: #F7F7F7;
-    color: black;
-    padding: 0 15px;
-    margin: 0;
-    font-weight: 400;
-    font-size: 16px;
-    position: relative;
-    display: flex;
-    top: -30px;
-    align-items: center;
-    border-radius: 5px;
-    overflow: hidden; // Cache tout contenu qui dépasse
-    transition: all 300ms ease-in-out; // Transition pour toutes les propriétés
-  
-    &.open {
-      padding: 75px 15px 70px 15px;
-    }
   
     @media (max-width: 768px) {
-      font-size: 14px;
-      align-items: flex-start;
-      padding: 0 5px; // Ajustement du padding pour les petits écrans
+      margin-left: 5px;
+      height: 40px; // Hauteur légèrement réduite en mobile si nécessaire
     }
   }
   
+  .arrow-icon {
+    width: 24px;
+    height: auto;
+    transition: transform 0.7s ease;
+  
+    &.arrow-up {
+      transform: rotate(180deg);
+    }
+  }
+  
+  .collapse-description-wrapper {
+    background-color: #F7F7F7;
+    border-radius: 5px;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease-in-out;
+    
+  
+    &.open {
+      max-height: 1000px;
+    }
+  }
+  
+  .collapse-description {
+    color: black;
+    padding: 15px;
+    font-weight: 400;
+    font-size: 16px;
+  
+    @media (max-width: 768px) {
+      font-size: 14px;
+    }
+  }
